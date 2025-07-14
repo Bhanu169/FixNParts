@@ -1,6 +1,9 @@
 import orderr from "../model10/orderModel.js";
 import Stripe from "stripe"
-const stripe = new Stripe('sk_test_51PJVJZSGpZvoPybBYEufDLfAHcVXwiHaWRJugJpwhjZOAIZs7giMxWe6YRpiIfgZSWBMYdv4Kib76McP8bEtLQqP00HRQH2rYz');
+import dotenv from 'dotenv';
+dotenv.config();
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+
 
 export const paymentSubmit = async (req, res) => {
   try {
