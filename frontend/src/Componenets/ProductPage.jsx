@@ -13,7 +13,7 @@ function ProductPage() {
     const getToken = token ? JSON.parse(token) : null
     const fetchProducts = async () => {
         try {
-            const res = await axios.get("http://localhost:6942/user/findProductAll");
+            const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/user/findProductAll`);
             console.log(res, "res")
             setProducts(res.data); // Adjust if response has a wrapper object
         } catch (error) {
@@ -29,7 +29,7 @@ function ProductPage() {
     const addItem = async (productIddd) => {
         try {
             // console.log(productId,"op")
-            const res = await axios.get("http://localhost:6942/findAllCart", {
+            const res = await axios.get("${process.env.NEXT_PUBLIC_API_URL}/findAllCart", {
                 headers: {
                     Authorization: `Bearer ${getToken?.token}`
                 }
@@ -43,7 +43,7 @@ function ProductPage() {
             // console.log(finddAndCompare)
             // return
             if (!finddAndCompare) {
-                const dataa = await axios.post(`http://localhost:6942/cartCreate`, { productId: productIddd }, {
+                const dataa = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/cartCreate`, { productId: productIddd }, {
                     headers: {
                         Authorization: `Bearer ${getToken?.token}`
                     }
@@ -51,7 +51,7 @@ function ProductPage() {
                 console.log(dataa)
                 toast.success(dataa.data.message)
             } else {
-                const dataa = await axios.put(`http://localhost:6942/updateCartItem/${finddAndCompare._id}`, { quantity: finddAndCompare.quantity + 1 }, {
+                const dataa = await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/updateCartItem/${finddAndCompare._id}`, { quantity: finddAndCompare.quantity + 1 }, {
                     headers: {
                         Authorization: `Bearer ${getToken?.token}`
                     }
@@ -60,7 +60,7 @@ function ProductPage() {
                 toast.success(dataa.data.message)
             }
 
-                const resss = await axios.get("http://localhost:6942/findAllCart", {
+                const resss = await axios.get("${process.env.NEXT_PUBLIC_API_URL}/findAllCart", {
                 headers: {
                     Authorization: `Bearer ${getToken?.token}`
                 }
@@ -135,7 +135,7 @@ function ProductPage() {
                     <div className="col-md-4 mb-4" key={product._id}>
                         <div className="card h-100 shadow-sm">
                             <img
-                                src={`http://localhost:6942/image/productImage/${product.image}`}
+                                src={`${process.env.NEXT_PUBLIC_API_URL}/image/productImage/${product.image}`}
                                 className="card-img-top"
                                 alt={product.title}
                                 style={{ height: "200px", objectFit: "cover" }}

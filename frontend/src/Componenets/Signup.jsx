@@ -29,7 +29,7 @@
 //   const handleInputSubmit = async (e) => {
 //     try {
 //       e.preventDefault()
-//       const log = await axios.post(`http://localhost:6942/user/signUp`, formData)
+//       const log = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/user/signUp`, formData)
 //       console.log(log)
 
 //       if (log.data.status !== 200) {
@@ -56,7 +56,7 @@
 //   const handleSubmit = async (e) => {
 //     try {
 //       e.preventDefault()
-//       const log = await axios.post(`http://localhost:6942/user/logIn`, data)
+//       const log = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/user/logIn`, data)
 //       console.log(log)
 
 //       if (log.data.status !== 200) {
@@ -218,7 +218,7 @@ function Sign() {
   const handleInputSubmit = async (e) => {
     try {
       e.preventDefault()
-      const log = await axios.post(`http://localhost:6942/user/signUp`, formData)
+      const log = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/user/signUp`, formData)
       console.log(log)
 
       if (log.data.status !== 200) {
@@ -246,7 +246,7 @@ function Sign() {
   const handleSubmit = async (e) => {
     try {
       e.preventDefault()
-      const log = await axios.post(`http://localhost:6942/user/logIn`, data)
+      const log = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/user/logIn`, data)
       console.log(log)
 
       if (log.data.status !== 200) {

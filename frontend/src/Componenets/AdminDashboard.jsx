@@ -17,7 +17,7 @@ console.log(products,"products")
 const fetchProducts = async () => {
   try {
     console.log("object")
-    const res = await axios.get("http://localhost:6942/user/adminDashboardCount");
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/user/adminDashboardCount`);
 
     console.log(res,"res")
 

@@ -10,7 +10,7 @@ function UserView() {
 
   const getData=async()=>{
     try {
-      const userData= await axios.get(`http://localhost:6942/user/findUserById/${userId}`)
+      const userData= await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/user/findUserById/${userId}`)
       console.log(userData,"abcde")
       setData(userData.data)
     } catch (error) {

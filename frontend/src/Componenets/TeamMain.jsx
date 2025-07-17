@@ -7,7 +7,7 @@ function TeamMain() {
   useEffect(() => {
     const fetchMechanics = async () => {
       try {
-        const res = await axios.get("http://localhost:6942/user/findMechAll")
+        const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/user/findMechAll`)
         setMechanics(res.data || [])
       } catch (err) {
         console.error("Error fetching mechanics:", err)
