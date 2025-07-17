@@ -25,6 +25,14 @@ app.use("/",proRouteee);
 app.use("/",cartRouter)
 app.use("/",orderRoute);
 // app.use('/', bookingRouter);
+
+
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+
 app.listen(port,()=>{
     console.log(`the server is running on port ${port}`)
 })
