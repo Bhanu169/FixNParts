@@ -42,7 +42,7 @@ function MechanicAdd() {
       data.append("available", formData.available)
       data.append("image", formData.image)
 
-      const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/user/addMechanic`, data)
+      const res = await axios.post(`http://localhost:6942/user/addMechanic`, data)
       toast.success(res.data.message)
       navigate("/mechanicTable")
     } catch (error) {

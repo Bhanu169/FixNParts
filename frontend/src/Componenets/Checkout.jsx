@@ -82,7 +82,7 @@ function Checkout() {
         return;
       }
 
-      const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/paymentSubmit`, {
+      const response = await axios.post(`http://localhost:6942/paymentSubmit`, {
         amount: totalAmount * 100,
       });
 
@@ -105,13 +105,13 @@ function Checkout() {
         totalAmount: subTotal
       };
 
-      await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/orderCreate`, updateProducts, {
+      await axios.post(`http://localhost:6942/orderCreate`, updateProducts, {
         headers: {
           "Authorization": `Bearer ${getToken?.token}`
         }
       });
 
-      await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/deleteAllItems`, {
+      await axios.delete(`http://localhost:6942/deleteAllItems`, {
         headers: {
           "Authorization": `Bearer ${getToken?.token}`
         }
@@ -131,7 +131,7 @@ function Checkout() {
 
   const getCartData = async () => {
     try {
-      const data = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/findAllCart`, {
+      const data = await axios.get(`http://localhost:6942/findAllCart`, {
         headers: {
           "Authorization": `Bearer ${getToken?.token}`
         }
@@ -148,7 +148,7 @@ function Checkout() {
 
   const getProductData = async () => {
     try {
-      const data = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/user/findProductAll`, {
+      const data = await axios.get(`http://localhost:6942/user/findProductAll`, {
         headers: {
           "Authorization": `Bearer ${getToken?.token}`
         }

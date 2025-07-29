@@ -21,7 +21,7 @@ function UserTable() {
 
   const getData = async () => {
     try {
-      const userData = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/user/findUserAll`, {
+      const userData = await axios.get(`http://localhost:6942/user/findUserAll`, {
         headers: {
           Authorization: `Bearer ${token.token}`
         }
@@ -60,7 +60,7 @@ function UserTable() {
         confirmButtonText: "Yes, delete it!"
       }).then(async (result) => {
         if (result.isConfirmed) {
-          const dataa = await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/user/deleteUserrr/${id}`)
+          const dataa = await axios.delete(`http://localhost:6942/user/deleteUserrr/${id}`)
           getData()
           Swal.fire({
             title: "Deleted!",

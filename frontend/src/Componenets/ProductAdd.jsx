@@ -37,7 +37,7 @@ function ProductAdd() {
       dataa.append("price",formData.price)
       dataa.append("quantity",formData.quantity)
       dataa.append("image",formData.image)
-      const log = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/user/addProduct`, dataa)
+      const log = await axios.post(`http://localhost:6942/user/addProduct`, dataa)
       console.log(log)
       setFormData(log.data.body)
       navigate("/productTable")

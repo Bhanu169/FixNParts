@@ -11,7 +11,7 @@
 
 //   const getData=async()=>{
 //     try {
-//       const productData= await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/user/findProductById/${productId}`)
+//       const productData= await axios.get(`http://localhost:6942/user/findProductById/${productId}`)
 //       console.log(productData.data,"abcde")
 //       setData(productData.data)
 //     } catch (error) {
@@ -99,7 +99,7 @@ const navigate=useNavigate()
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/user/findProductById/${productId}`);
+        const response = await axios.get(`http://localhost:6942/user/findProductById/${productId}`);
         setProduct(response.data);
       } catch (err) {
         setError('Failed to load product details.');
