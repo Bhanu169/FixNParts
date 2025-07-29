@@ -14,7 +14,7 @@ const navigate=useNavigate()
   const handleSubmit = async (e) => {
     try {
       e.preventDefault()
-      const log = await axios.post(`http://localhost:6942/user/logIn`, data)
+      const log = await axios.post(`https://fixnparts.onrender.com/user/logIn`, data)
       console.log(log)
 
       if (log.data.status !== 200) {

@@ -9,7 +9,7 @@ function MechanicTable() {
 
   const fetchMechanics = async () => {
     try {
-      const res = await axios.get('http://localhost:6942/user/findMechAll')
+      const res = await axios.get('https://fixnparts.onrender.com/user/findMechAll')
       console.log(res,"res")
       setMechanics(res.data)
     } catch (error) {
@@ -41,7 +41,7 @@ function MechanicTable() {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          await axios.delete(`http://localhost:6942/user/deleteMech/${id}`)
+          await axios.delete(`https://fixnparts.onrender.com/user/deleteMech/${id}`)
           fetchMechanics()
           Swal.fire("Deleted!", "Mechanic has been removed.", "success")
         } catch (err) {

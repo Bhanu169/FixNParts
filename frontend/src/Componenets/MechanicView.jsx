@@ -9,7 +9,7 @@ function MechanicView() {
 
   const fetchMechanic = async () => {
     try {
-      const res = await axios.get(`http://localhost:6942/user/findMechById/${mechanicId}`)
+      const res = await axios.get(`https://fixnparts.onrender.com/user/findMechById/${mechanicId}`)
       console.log(res)
       setMechanic(res.data)
     } catch (error) {

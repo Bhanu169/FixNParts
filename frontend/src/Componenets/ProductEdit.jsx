@@ -16,7 +16,7 @@ function ProductEdit() {
   })
   const getData = async () => {
     try {
-      const res = await axios.get(`http://localhost:6942/user/findProductById/${productId}`)
+      const res = await axios.get(`https://fixnparts.onrender.com/user/findProductById/${productId}`)
       setData(res.data.g)
       console.log(res)
     } catch (error) {
@@ -52,7 +52,7 @@ function ProductEdit() {
       dataa.append("quantity", data.quantity)
       if (data.image instanceof File) {
         dataa.append("image", data.image);
-      } await axios.put(`http://localhost:6942/user/findProductByIdAndUpdate/${productId}`, dataa)
+      } await axios.put(`https://fixnparts.onrender.com/user/findProductByIdAndUpdate/${productId}`, dataa)
       navigate("/productTable")
       toast.success("Updated successfull")
     } catch (error) {

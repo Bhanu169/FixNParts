@@ -82,7 +82,7 @@ function Checkout() {
         return;
       }
 
-      const response = await axios.post(`http://localhost:6942/paymentSubmit`, {
+      const response = await axios.post(`https://fixnparts.onrender.com/paymentSubmit`, {
         amount: totalAmount * 100,
       });
 
@@ -105,13 +105,13 @@ function Checkout() {
         totalAmount: subTotal
       };
 
-      await axios.post(`http://localhost:6942/orderCreate`, updateProducts, {
+      await axios.post(`https://fixnparts.onrender.com/orderCreate`, updateProducts, {
         headers: {
           "Authorization": `Bearer ${getToken?.token}`
         }
       });
 
-      await axios.delete(`http://localhost:6942/deleteAllItems`, {
+      await axios.delete(`https://fixnparts.onrender.com/deleteAllItems`, {
         headers: {
           "Authorization": `Bearer ${getToken?.token}`
         }
@@ -131,7 +131,7 @@ function Checkout() {
 
   const getCartData = async () => {
     try {
-      const data = await axios.get(`http://localhost:6942/findAllCart`, {
+      const data = await axios.get(`https://fixnparts.onrender.com/findAllCart`, {
         headers: {
           "Authorization": `Bearer ${getToken?.token}`
         }
@@ -148,7 +148,7 @@ function Checkout() {
 
   const getProductData = async () => {
     try {
-      const data = await axios.get(`http://localhost:6942/user/findProductAll`, {
+      const data = await axios.get(`https://fixnparts.onrender.com/user/findProductAll`, {
         headers: {
           "Authorization": `Bearer ${getToken?.token}`
         }

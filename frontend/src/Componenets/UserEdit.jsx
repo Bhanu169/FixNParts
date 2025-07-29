@@ -10,7 +10,7 @@ function UserEdit() {
     
      const getData=async()=>{
     try {
-      const userData= await axios.get(`http://localhost:6942/user/findUserById/${userId}`)
+      const userData= await axios.get(`https://fixnparts.onrender.com/user/findUserById/${userId}`)
       console.log(userData,"abcde")
       setData(userData.data)
     } catch (error) {
@@ -29,7 +29,7 @@ function UserEdit() {
     const handleSubmit=async(e)=>{
         try {
             e.preventDefault()
-            const userdata= await axios.put(`http://localhost:6942/user/findUserByIdAndUpdate/${userId}`,data)
+            const userdata= await axios.put(`https://fixnparts.onrender.com/user/findUserByIdAndUpdate/${userId}`,data)
             console.log(userdata,"userdata")
             navigate("/userTable")
         } catch (error) {

@@ -10,7 +10,7 @@ function UserView() {
 
   const getData=async()=>{
     try {
-      const userData= await axios.get(`http://localhost:6942/user/findUserById/${userId}`)
+      const userData= await axios.get(`https://fixnparts.onrender.com/user/findUserById/${userId}`)
       console.log(userData,"abcde")
       setData(userData.data)
     } catch (error) {

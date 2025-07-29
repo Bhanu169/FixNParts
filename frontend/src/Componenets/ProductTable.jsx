@@ -12,7 +12,7 @@ function ProductTable() {
 
   const getData = async () => {
     try {
-      const productData = await axios.get(`http://localhost:6942/user/findProductAll`)
+      const productData = await axios.get(`https://fixnparts.onrender.com/user/findProductAll`)
       console.log(productData)
       setData(productData.data)
     } catch (error) {
@@ -52,7 +52,7 @@ function ProductTable() {
         confirmButtonText: "Yes, delete it!"
       }).then(async (result) => {
         if (result.isConfirmed) {
-          const dataa = await axios.delete(`http://localhost:6942/user/deleteProduct/${id}`)
+          const dataa = await axios.delete(`https://fixnparts.onrender.com/user/deleteProduct/${id}`)
           getData()
           Swal.fire({
             title: "Deleted!",

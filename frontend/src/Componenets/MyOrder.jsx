@@ -12,7 +12,7 @@ function MyOrder() {
 
   const getOrders = async () => {
     try {
-      const dataaa = await axios.get(`http://localhost:6942/user/orderGetAll`, {
+      const dataaa = await axios.get(`https://fixnparts.onrender.com/user/orderGetAll`, {
         headers:
         {
           "Authorization": `Bearer ${token?.token}`

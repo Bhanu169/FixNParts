@@ -11,7 +11,7 @@ function MyOrderForAdmin() {
 
   const getOrders = async () => {
     try {
-      const response = await axios.get(`http://localhost:6942/user/orderGetAllForAdmin`, {
+      const response = await axios.get(`https://fixnparts.onrender.com/user/orderGetAllForAdmin`, {
         headers: {
           Authorization: `Bearer ${token?.token}`,
         },

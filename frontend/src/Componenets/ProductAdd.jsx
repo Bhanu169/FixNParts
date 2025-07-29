@@ -37,7 +37,7 @@ function ProductAdd() {
       dataa.append("price",formData.price)
       dataa.append("quantity",formData.quantity)
       dataa.append("image",formData.image)
-      const log = await axios.post(`http://localhost:6942/user/addProduct`, dataa)
+      const log = await axios.post(`https://fixnparts.onrender.com/user/addProduct`, dataa)
       console.log(log)
       setFormData(log.data.body)
       navigate("/productTable")

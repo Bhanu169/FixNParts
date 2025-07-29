@@ -16,7 +16,7 @@ const mechanicId = useParams().id
 
   const getData = async () => {
     try {
-      const res = await axios.get(`http://localhost:6942/user/findMechById/${mechanicId}`)
+      const res = await axios.get(`https://fixnparts.onrender.com/user/findMechById/${mechanicId}`)
       console.log(res,"userdata")
       setData(res.data.g)
     } catch (error) {
@@ -50,7 +50,7 @@ const mechanicId = useParams().id
       dataa.append("price ",data.price)
       dataa.append("image",data.image)
 
-      await axios.put(`http://localhost:6942/user/findMechByIdAndUpdate/${mechanicId}`, dataa)
+      await axios.put(`https://fixnparts.onrender.com/user/findMechByIdAndUpdate/${mechanicId}`, dataa)
       console.log(data,"userdata")
       navigate("/MechanicTable")
     } catch (error) {

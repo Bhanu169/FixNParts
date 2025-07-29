@@ -15,7 +15,7 @@ function Cart() {
 
   const fetchProducts = async () => {
   try {
-    const res = await axios.get(`http://localhost:6942/findAllCart`, {
+    const res = await axios.get(`https://fixnparts.onrender.com/findAllCart`, {
       headers: { Authorization: `Bearer ${getToken?.token}` }
     });
 
@@ -36,7 +36,7 @@ function Cart() {
 
   const incFunction = async (id, quant) => {
     try {
-      await axios.put(`http://localhost:6942/updateCartItem/${id}`, { quantity: quant + 1 }, {
+      await axios.put(`https://fixnparts.onrender.com/updateCartItem/${id}`, { quantity: quant + 1 }, {
         headers: { Authorization: `Bearer ${getToken?.token}` }
       });
       toast.success("Quantity updated");
@@ -49,7 +49,7 @@ function Cart() {
   const decFunction = async (id, quant) => {
     try {
       if (quant === 1) return;
-      await axios.put(`http://localhost:6942/updateCartItem/${id}`, { quantity: quant - 1 }, {
+      await axios.put(`https://fixnparts.onrender.com/updateCartItem/${id}`, { quantity: quant - 1 }, {
         headers: { Authorization: `Bearer ${getToken?.token}` }
       });
       toast.success("Quantity updated");
@@ -70,7 +70,7 @@ function Cart() {
       confirmButtonText: "Yes, delete it!"
     }).then(async (result) => {
       if (result.isConfirmed) {
-        await axios.delete(`http://localhost:6942/deleteSingleCartItem/${id}`, {
+        await axios.delete(`https://fixnparts.onrender.com/deleteSingleCartItem/${id}`, {
           headers: { Authorization: `Bearer ${getToken?.token}` }
         });
         fetchProducts();
@@ -95,7 +95,7 @@ function Cart() {
                   <div className="card-body d-flex justify-content-between align-items-center">
                     <div className="d-flex align-items-center">
                       <img
-                        src={`http://localhost:6942/image/productImage/${item?.productId?.image}`}
+                        src={`https://fixnparts.onrender.com/image/productImage/${item?.productId?.image}`}
                         alt={item?.productId?.title}
                         className="img-thumbnail"
                         style={{ width: "80px", height: "80px", objectFit: "cover" }}
