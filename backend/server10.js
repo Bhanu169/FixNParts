@@ -19,7 +19,10 @@ app.use(cors())
 
 app.use(express.json())
 app.use(fileUpload())
-app.use('/image', express.static('public/image'));
+const path = require('path');
+app.use('/image', express.static(path.join(__dirname, 'public/image')));
+
+// app.use('/image', express.static('public/image'));
 app.use("/user",userRouter)
 app.use("/",proRouteee);
 app.use("/",cartRouter)
