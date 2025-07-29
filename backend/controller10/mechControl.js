@@ -30,7 +30,7 @@ export const findMechAll=async(req,res)=>{
 
         const dataaa=mechData.map((e)=>({
             ...e.toObject(),
-            picImg:`http://localhost:6942/image/mechImage/${e.image}`
+            picImg:`${req.protocol}://${req.get("host")}/image/mechImage/${e.image}`
         }))
         return res.json(dataaa)
         
