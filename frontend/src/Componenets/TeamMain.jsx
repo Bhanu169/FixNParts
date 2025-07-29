@@ -57,7 +57,7 @@ function TeamMain() {
                   <div className="position-relative overflow-hidden">
                     <img
                     style={{ height: "250px", width: "300px" }} 
-                      src={mech?.picImg} alt="" />
+                      src={`https://fixnparts.onrender.com/${mech?.picImg}`} alt="" />
                     <div className="team-overlay position-absolute start-0 top-0 w-100 h-100">
                       <a className="btn btn-square mx-1" href="#">
                         <i className="fab fa-facebook-f" />
