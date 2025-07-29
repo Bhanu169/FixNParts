@@ -9,6 +9,10 @@ import orderRoute from "./routes10/orderRoutee.js";
 import proRouteee from "./routes10/proRoutes.js";
 // import bookingRouter from "./routes10/bookingRoutes.js";
 
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
 dotenv.config()
 
 export const app=express()
@@ -19,8 +23,11 @@ app.use(cors())
 
 app.use(express.json())
 app.use(fileUpload())
-const path = require('path');
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 app.use('/image', express.static(path.join(__dirname, 'public/image')));
+
 
 // app.use('/image', express.static('public/image'));
 app.use("/user",userRouter)
